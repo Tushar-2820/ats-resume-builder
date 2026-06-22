@@ -5,7 +5,6 @@ import { ResumePreview } from "./ResumePreview";
 import { DownloadButton } from "./DownloadButton";
 // import { dummyResume } from "../dummyResponse/dummyResume";
 import { Loading } from "./Loading";
-import { Popup } from "./popup";
 import { toast } from "react-toastify";
 
 export const GenerateButton = () => {
