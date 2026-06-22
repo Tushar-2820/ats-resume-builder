@@ -18,9 +18,13 @@ export const ResumePreview = ({ resume }: Props) => {
             {resume.header?.location}
           </p>
 
-          <p className="text-sm">{resume.header?.linkedin}</p>
+          <p className="text-sm">
+            <a href={resume.header.linkedin}>{resume.header?.linkedin}</a>
+          </p>
 
-          <p className="text-sm">{resume.header?.github}</p>
+          <p className="text-sm">
+            <a href={resume.header.github}>{resume.header?.github}</a>
+          </p>
         </div>
 
         {/* Summary */}
@@ -120,7 +124,7 @@ export const ResumePreview = ({ resume }: Props) => {
           <h2 className="border-b font-bold uppercase">Certifications</h2>
 
           <ul className="list-disc pl-5">
-            {resume.certifications?.map((cert: string, index: number) => (
+            {resume.certifications?.map((cert: any, index: number) => (
               <li key={index}>{cert}</li>
             ))}
           </ul>
@@ -130,11 +134,7 @@ export const ResumePreview = ({ resume }: Props) => {
         <section className="mt-6">
           <h2 className="border-b font-bold uppercase">Achievements</h2>
 
-          <ul className="list-disc pl-5">
-            {resume.achievements?.map((item: string, index: number) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
+          <p className="mt-2 whitespace-pre-line">{resume.achievements}</p>
         </section>
       </div>
     </div>

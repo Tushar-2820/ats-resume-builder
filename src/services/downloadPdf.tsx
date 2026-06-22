@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 export const downloadPdf = async () => {
   const element = document.getElementById("resumeToDownload");
 
@@ -22,6 +24,7 @@ export const downloadPdf = async () => {
 
     if (!response.ok) {
       throw new Error("PDF generation failed");
+      toast.error("PDF generation failed");
     }
 
     const blob = await response.blob();
@@ -36,7 +39,9 @@ export const downloadPdf = async () => {
 
     a.remove();
     window.URL.revokeObjectURL(url);
+    toast.success("PDF Download Successfully");
   } catch (error) {
     console.error("Failed to download PDF:", error);
+    toast.error("Failed to download PDF");
   }
 };

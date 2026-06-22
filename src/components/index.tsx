@@ -10,3 +10,4 @@ export { GenerateButton } from "./GenerateButton";
 export { ResumePreview } from "./ResumePreview";
 export { DownloadButton } from "./DownloadButton";
 export { Loading } from "./Loading";
+export { Popup } from "./popup";

@@ -107,7 +107,7 @@ export const Project = () => {
           onClick={addSection}
           className="mb-1 mt-4 rounded bg-blue-600 px-3 py-1 text-white"
         >
-          + Add Experience
+          + Add Projects
         </button>
       </div>
     </div>

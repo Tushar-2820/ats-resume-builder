@@ -9,6 +9,7 @@ import {
   Achievements,
   Certifications,
   GenerateButton,
+  Popup,
 } from "./components";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Achievements />
       <Certifications></Certifications>
       <GenerateButton></GenerateButton>
+      <Popup />
     </>
   );
 }
