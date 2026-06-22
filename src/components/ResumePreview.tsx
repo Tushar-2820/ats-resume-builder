@@ -120,8 +120,8 @@ export const ResumePreview = ({ resume }: Props) => {
           <h2 className="border-b font-bold uppercase">Certifications</h2>
 
           <ul className="list-disc pl-5">
-            {resume.certifications?.map((cert: string, index: number) => (
-              <li key={index}>{cert}</li>
+            {resume.certifications?.map((cert: any, index: number) => (
+              <li key={index}>{cert.certificateName}</li>
             ))}
           </ul>
         </section>
