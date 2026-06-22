@@ -5,6 +5,8 @@ import { ResumePreview } from "./ResumePreview";
 import { DownloadButton } from "./DownloadButton";
 // import { dummyResume } from "../dummyResponse/dummyResume";
 import { Loading } from "./Loading";
+import { Popup } from "./popup";
+import { toast } from "react-toastify";
 
 export const GenerateButton = () => {
   const [generatedResume, setGeneratedResume] = React.useState<any>(null);
@@ -31,10 +33,13 @@ export const GenerateButton = () => {
 
     try {
       const data = await handleGenerateResume(state);
-      if (!data) {
+      if (!data.success) {
         setGeneratedResume(null);
+        toast.error(data?.result || "Failed to generate resume.");
       } else {
-        setGeneratedResume(data);
+        setGeneratedResume(data.result);
+        console.log(data.result.certifications);
+        toast.success("Resume Generated Succesfully");
       }
     } catch (err) {
       console.error(err);
