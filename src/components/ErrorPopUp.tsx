@@ -1,7 +1,7 @@
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export const Popup = () => {
+export const ErrorPopUp = () => {
   return (
     <ToastContainer
       position="top-right"

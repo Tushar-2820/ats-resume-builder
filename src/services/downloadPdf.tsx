@@ -12,7 +12,7 @@ export const downloadPdf = async () => {
   console.log(html);
 
   try {
-    const response = await fetch("https://resumebuilderserver-8nty.onrender.com/generatepdf", {
+    const response = await fetch("http://localhost:3000/generatepdf", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

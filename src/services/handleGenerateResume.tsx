@@ -1,6 +1,6 @@
 export const handleGenerateResume = async (state: any) => {
   try {
-    const response = await fetch("https://resumebuilderserver-8nty.onrender.com/build-resume", {
+    const response = await fetch("http://localhost:3000/build-resume", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

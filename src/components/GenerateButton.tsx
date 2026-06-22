@@ -33,14 +33,14 @@ export const GenerateButton = () => {
     try {
       const data = await handleGenerateResume(state);
 
+      console.log(data);
+
       if (!data.success) {
         setGeneratedResume(null);
         toast.error(data?.result || "Failed to generate resume.");
-
       } else {
         setGeneratedResume(data.result);
         toast.success("Resume Generated Succesfully");
-      
       }
     } catch (err) {
       console.error(err);
