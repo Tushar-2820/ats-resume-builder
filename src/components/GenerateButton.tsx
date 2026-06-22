@@ -3,12 +3,12 @@ import { ResumeContext } from "../context/ResumeContext";
 import { handleGenerateResume } from "../services/handleGenerateResume";
 import { ResumePreview } from "./ResumePreview";
 import { DownloadButton } from "./DownloadButton";
-import { dummyResume } from "../dummyResponse/dummyResume";
+// import { dummyResume } from "../dummyResponse/dummyResume";
 import { Loading } from "./Loading";
 
 export const GenerateButton = () => {
   const [generatedResume, setGeneratedResume] = React.useState<any>(null);
-  const [dummyResult, setdummyResult] = React.useState(false);
+  // const [dummyResult, setdummyResult] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
 
   const context = React.useContext(ResumeContext);
@@ -19,6 +19,8 @@ export const GenerateButton = () => {
 
   const onGenerate = async () => {
     setLoading(true);
+
+    console.log(dispatch);
 
     setTimeout(() => {
       window.scrollTo({
@@ -41,25 +43,25 @@ export const GenerateButton = () => {
     }
   };
 
-  const dummyResultHandler = () => {
-    setLoading(true);
-    setTimeout(() => {
-      window.scrollTo({
-        top: document.documentElement.scrollHeight,
-        behavior: "smooth",
-      });
-    }, 500);
-    setTimeout(() => {
-      setdummyResult(true);
-      setLoading(false);
-    }, 5000);
-  };
+  // const dummyResultHandler = () => {
+  //   setLoading(true);
+  //   setTimeout(() => {
+  //     window.scrollTo({
+  //       top: document.documentElement.scrollHeight,
+  //       behavior: "smooth",
+  //     });
+  //   }, 500);
+  //   setTimeout(() => {
+  //     // setdummyResult(true);
+  //     setLoading(false);
+  //   }, 5000);
+  // };
 
   return (
     <>
       <button
-        // onClick={onGenerate}
-        onClick={dummyResultHandler}
+        onClick={onGenerate}
+        // onClick={dummyResultHandler}
         className="mx-2 mb-4 flex w-[calc(100%-2rem)] items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl active:scale-95"
       >
         ✨ Generate Resume
