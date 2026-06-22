@@ -31,7 +31,7 @@ export const GenerateButton = () => {
 
     try {
       const data = await handleGenerateResume(state);
-      if (!data.success) {
+      if (!data) {
         setGeneratedResume(null);
       } else {
         setGeneratedResume(data);
