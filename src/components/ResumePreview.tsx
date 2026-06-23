@@ -125,7 +125,9 @@ export const ResumePreview = ({ resume }: Props) => {
 
           <ul className="list-disc pl-5">
             {resume.certifications?.map((cert: any, index: number) => (
-              <li key={index}>{cert}</li>
+              <li key={index}>
+                {cert.certificateName} - {cert.certificateProvider}
+              </li>
             ))}
           </ul>
         </section>
