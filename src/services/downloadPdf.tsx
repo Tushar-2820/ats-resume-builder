@@ -8,7 +8,7 @@ export const downloadPdf = async () => {
     return;
   }
 
-  const html = `<!DOCTYPE html><html><head><script src='https://cdn.tailwindcss.com'></script></head><body class='bg-white p-10'>${element.innerHTML}</body></html>`;
+  const html = `${element.innerHTML}`;
   console.log(html);
 
   try {
